@@ -10,13 +10,12 @@
  * available at http://www.t13.org/docs2002/d1572r0.pdf.  It is
  * very similar to D1484 Revision 3 http://www.t13.org/docs2002/d1484r3.pdf
  *
- * In a nutshell, arch/{i386,x86_64}/boot/setup.S populates a scratch
- * table in the boot_params that contains a list of BIOS-enumerated
- * boot devices.
- * In arch/{i386,x86_64}/kernel/setup.c, this information is
- * transferred into the edd structure, and in drivers/firmware/edd.c, that
- * information is used to identify BIOS boot disk.  The code in setup.S
- * is very sensitive to the size of these structures.
+ * In a nutshell, arch/x86/boot/edd.c populates a scratch table in the
+ * boot_params that contains a list of BIOS-enumerated boot devices.
+ * In arch/x86/kernel/setup.c, this information is transferred into
+ * the edd structure, and in drivers/firmware/edd.c, that information
+ * is used to identify BIOS boot disk. The boot code is very sensitive
+ * to the size of these structures.
  */
 #ifndef _LINUX_EDD_H
 #define _LINUX_EDD_H
